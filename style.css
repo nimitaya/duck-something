@@ -25,6 +25,7 @@ h1 {
   font-variant: small-caps;
   margin-bottom: 1rem;
   text-align: center;
+  text-shadow: 6px 6px 1px #30597a;
 }
 
 h2 {
@@ -32,6 +33,7 @@ h2 {
   font-variant: small-caps;
   margin-bottom: 0.5rem;
   text-align: center;
+  border-bottom: 3px solid aliceblue;
 }
 
 section {
@@ -45,6 +47,7 @@ section {
 
 form {
   margin: 1rem auto;
+  z-index: 10;
 }
 
 label,
@@ -95,8 +98,7 @@ figure {
 
   border: 1px solid #264963;
   border-radius: 5px;
-  box-shadow:  30px 30px 60px #30597a,
-             -30px -30px 60px #4079a4;
+  box-shadow: 30px 30px 60px #30597a, -30px -30px 60px #4079a4;
 }
 
 img {
