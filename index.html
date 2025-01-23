@@ -8,38 +8,52 @@
     <script src="./main.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Quack Quack</h1>
-    </header>
-    <main>
-        <!-- Duck Image -->
-        <section id="section-image">
-            <h2>Get a duck image!</h2>
-            <form action="" id="image-form">
-                <label for="input-number-image">Enter a number between 1 ‒ <span id="max-num-image"> </span></label>
-                <input type="number" name="image-number" id="input-number-image" min="1" required>
-                <button type="submit">Get Quack</button>
-            </form>
-            <figure>
-                <img src="" alt="A random picture of a duck, based on the number you typed." id="duck-image">
-                <figcaption id="image-caption"></figcaption>
-            </figure>
-        </section>
-
-        <!-- Duck Gif -->
-        <section id="section-gif">
-            <h2>Get a duck gif!</h2>
-            <form action="" id="gif-form">
-                <label for="input-number-gif">Enter a number between 1 ‒ <span id="max-num-gif"> </span></label>
-                <input type="number" name="gif-number" id="input-number-gif" min="1" required>
-                <button type="submit">Get Quacky</button>
-            </form>
-            <figure>
-                <img src="" alt="A random picture of a duck, based on the number you typed." id="duck-gif">
-                <figcaption id="gif-caption"></figcaption>
-            </figure>
-        </section>
-    </main>
-    <footer></footer>
+    <div class="blur-container">
+        <header>
+            <h1>Quack Quack</h1>
+        </header>
+        <main>
+            <!-- Duck Image -->
+            <section id="section-image">
+                <h2>Get a duck image!</h2>
+                <form action="" id="image-form">
+                    <label for="input-number-image">Enter a number between 1 ‒ <span id="max-num-image"> </span></label>
+                    <input type="number" name="image-number" id="input-number-image" min="1" required>
+                    <button type="submit">Get Quack</button>
+                </form>
+                <figure>
+                    <img src="" alt="A random picture of a duck, based on the number you typed." id="duck-image">
+                    <figcaption id="image-caption"></figcaption>
+                </figure>
+            </section>
+    
+            <!-- Duck Gif -->
+            <section id="section-gif">
+                <h2>Get a duck gif!</h2>
+                <form action="" id="gif-form">
+                    <label for="input-number-gif">Enter a number between 1 ‒ <span id="max-num-gif"> </span></label>
+                    <input type="number" name="gif-number" id="input-number-gif" min="1" required>
+                    <button type="submit">Get Quacky</button>
+                </form>
+                <figure>
+                    <img src="" alt="A random picture of a duck, based on the number you typed." id="duck-gif">
+                    <figcaption id="gif-caption"></figcaption>
+                </figure>
+            </section>
+    
+            <!-- Random Duck -->
+             <section id="section-random">
+                <h2>Get random duck!</h2>
+                <button class="random-button" id="random-button">Get Random Duckies</button>
+                <figure>
+                    <img src="" alt="A random picture of a duck." id="random-duck">
+                    <figcaption id="random-caption"></figcaption>
+                </figure>
+             </section>
+        </main>
+        <footer>
+            <p id="bgInformation">Test Information</p>
+        </footer>
+    </div>
 </body>
 </html>

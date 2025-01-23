@@ -11,20 +11,24 @@ const inputForGif = document.getElementById("input-number-gif");
 const gifImg = document.getElementById("duck-gif");
 const gifCaption = document.getElementById("gif-caption");
 
+const randomButton = document.getElementById("random-button");
+const randomImg = document.getElementById("random-duck");
+const randomCaption = document.getElementById("random-caption");
+
 // ========== Functions
 // ----- Set Max Numbers for Input
 async function setMaxNumbers() {
   try {
     const response = await fetch(
-    "https://corsproxy.io/?url=https://random-d.uk/api/list?format=json"
-  );
-  const data = await response.json();
+      "https://corsproxy.io/?url=https://random-d.uk/api/list?format=json"
+    );
+    const data = await response.json();
 
-  maxNumImage.textContent = data.image_count;
-  inputForImage.setAttribute("max", data.image_count);
+    maxNumImage.textContent = data.image_count;
+    inputForImage.setAttribute("max", data.image_count);
 
-  maxNumGif.textContent= data.gif_count;
-  inputForGif.setAttribute("max", data.gif_count);
+    maxNumGif.textContent = data.gif_count;
+    inputForGif.setAttribute("max", data.gif_count);
   } catch (error) {
     console.log(error);
   }
@@ -42,12 +46,15 @@ async function getImage(event) {
     // console.log(data);
 
     let inputNumber = Number(inputForImage.value);
-    imageImg.style.display = "inline-block"
+    imageImg.style.display = "inline-block";
     imageImg.setAttribute(
       "src",
-      `https://corsproxy.io/?url=https://random-d.uk/api/${data.images[inputNumber - 1]}`);
-      imageCaption.textContent = "Powered by random-d.uk";
-      imageCaption.style.display = "block";
+      `https://corsproxy.io/?url=https://random-d.uk/api/${
+        data.images[inputNumber - 1]
+      }`
+    );
+    imageCaption.textContent = "Powered by random-d.uk";
+    imageCaption.style.display = "block";
   } catch (error) {
     console.log(error);
   }
@@ -64,12 +71,32 @@ async function getGif(event) {
     const data = await response.json();
 
     let inputNumber = Number(inputForGif.value);
-    gifImg.style.display = "inline-block"
+    gifImg.style.display = "inline-block";
     gifImg.setAttribute(
       "src",
-      `https://corsproxy.io/?url=https://random-d.uk/api/${data.gifs[inputNumber - 1]}`);
-      gifCaption.textContent = "Powered by random-d.uk";
-      gifCaption.style.display = "block";
+      `https://corsproxy.io/?url=https://random-d.uk/api/${
+        data.gifs[inputNumber - 1]
+      }`
+    );
+    gifCaption.textContent = "Powered by random-d.uk";
+    gifCaption.style.display = "block";
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// ----- Get Random
+async function getRandom() {
+  try {
+    const response = await fetch(
+      "https://corsproxy.io/?url=https://random-d.uk/api/random?format=json"
+    );
+    const data = await response.json();
+
+    randomImg.style.display = "inline-block";
+    randomImg.setAttribute("src", data.url);
+    randomCaption.textContent = "Powered by random-d.uk";
+    randomCaption.style.display = "block";
   } catch (error) {
     console.log(error);
   }
@@ -78,21 +105,5 @@ async function getGif(event) {
 // ========== Event Listeners
 document.addEventListener("DOMContentLoaded", setMaxNumbers);
 getImageForm.addEventListener("submit", getImage);
-getGifForm.addEventListener("submit", getGif)
-
-
-
-
-
-
-// ========================================================
-async function getQuack() {
-  const response = await fetch(
-    "https://corsproxy.io/?url=https://random-d.uk/api/random?format=json"
-  );
-  const data = await response.json();
-  console.log(data);
-  //   const image = document.createElement("img")
-  //   image.setAttribute("src", data.url)
-  //   duckContainer.appendChild(image)
-}
+getGifForm.addEventListener("submit", getGif);
+randomButton.addEventListener("click", getRandom);

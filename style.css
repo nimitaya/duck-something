@@ -11,13 +11,32 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(./img/bg-mobile.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-color: #38698f;
   color: aliceblue;
 }
 
 header,
-main {
+main,
+footer {
   padding: 1rem;
+}
+
+.blur-container {
+  margin-top: 2rem;
+  background-color: rgba(38, 73, 99, 0.1);
+  backdrop-filter: blur(3px);
+  border-radius: 4rem;
+  width: 85%;
 }
 
 h1 {
@@ -37,23 +56,27 @@ h2 {
 }
 
 section {
-  width: 85%;
   margin: 1rem auto;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-color: #38698f;
+  border-radius: 10px;
 }
 
 form {
   margin: 1rem auto;
-  z-index: 10;
+  z-index: 100;
 }
 
 label,
 input,
 button {
   font-size: 1.1rem;
+  z-index: 100;
 }
 
 label {
@@ -89,12 +112,18 @@ button {
   }
 }
 
+.random-button {
+  margin: 1rem;
+}
+
 figure {
   display: block;
   max-width: 500px;
   width: fit-content;
   height: auto;
   margin-bottom: 2.5rem;
+
+  position: relative;
 
   border: 1px solid #264963;
   border-radius: 5px;
@@ -110,4 +139,15 @@ img {
 figcaption {
   display: none;
   padding: 0.5rem;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(38, 73, 99, 0.5);
+  backdrop-filter: blur(5px);
 }
+
+
+/* TODO Media Querys for Background and smaller size of section*/
