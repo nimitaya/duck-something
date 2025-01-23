@@ -15,6 +15,9 @@ const randomButton = document.getElementById("random-button");
 const randomImg = document.getElementById("random-duck");
 const randomCaption = document.getElementById("random-caption");
 
+const bodyElement = document.querySelector("body");
+const bgInfo = document.getElementById("bg-information");
+
 // ========== Functions
 // ----- Set Max Numbers for Input
 async function setMaxNumbers() {
@@ -102,8 +105,40 @@ async function getRandom() {
   }
 }
 
+// ----- give information on Background Pic
+function checkBg() {
+  switch (checkWidth()) {
+    case "mobile":
+      bgInfo.textContent = "Background image by: KevinSchmid";
+      bgInfo.setAttribute("href", "https://pixabay.com/users/kevinschmid-15711311/")
+      break;
+
+    case "desktop":
+      bgInfo.textContent = "Background image by: matthiaskost";
+      bgInfo.setAttribute("href", "https://pixabay.com/users/matthiaskost-15902545/");
+      break;
+  
+    default:
+      bgInfo.textContent = "";
+      break;
+  }
+}
+
+// ----- check window size
+function checkWidth() {
+  if (window.innerWidth < 768) {
+    return "mobile";
+  } else if (window.innerWidth >= 768) {
+    return "desktop";
+  } 
+}
+
 // ========== Event Listeners
+// Set max Numbers for Inputs
 document.addEventListener("DOMContentLoaded", setMaxNumbers);
+// Getting Pic, Gif or Random
 getImageForm.addEventListener("submit", getImage);
 getGifForm.addEventListener("submit", getGif);
 randomButton.addEventListener("click", getRandom);
+// Change background Information
+document.addEventListener("DOMContentLoaded", checkBg);
