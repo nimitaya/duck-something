@@ -16,6 +16,8 @@ body {
   justify-content: center;
   align-items: center;
 
+  /* IMPORTANT check Background Img for mobile */
+
   background-image: url(./img/bg-mobile.jpg);
   background-position: center;
   background-size: cover;
@@ -39,12 +41,24 @@ footer {
   width: 85%;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 h1 {
   font-size: 3rem;
   font-variant: small-caps;
   margin-bottom: 1rem;
   text-align: center;
   text-shadow: 6px 6px 1px #30597a;
+}
+
+.logo {
+  display: inline-block;
+  max-width: 80px;
 }
 
 h2 {
